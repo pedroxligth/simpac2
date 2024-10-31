@@ -53,3 +53,15 @@ $routes->get('avaliacao', 'AvaliacaoController::index');
 
 $routes->get('useradmin', 'UserAdmin::index'); // Página de cadastro de usuários
 $routes->post('useradmin/cadastrar', 'UserAdmin::cadastrar'); // Ação para cadastrar o usuário
+
+// Rota para exibir a página de criação de trabalho
+$routes->get('criar-trabalho', 'TrabalhoController::create');
+
+// Rota para processar o formulário de criação de trabalho
+$routes->post('criar-trabalho', 'TrabalhoController::store');
+
+$routes->get('trabalho/evaluar/(:num)', 'Avaliador::evaluate/$1');
+$routes->post('trabalho/evaluar/(:num)', 'Avaliador::submitEvaluation/$1');
+
+
+
